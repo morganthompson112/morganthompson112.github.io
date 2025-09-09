@@ -1,15 +1,15 @@
 body {
   background-color: #01796f;
   margin: 0px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 header nav {
   text-align: center;
   padding: 40px 5% 0 5%;
-  margin: 0;
+  margin: 0 10%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 4fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
   gap: 0px 0px;
 }
 
@@ -17,17 +17,20 @@ header img {
   width: 100px;
 }
 
-header nav a {
-  color: rgb(255, 255, 255);
+header nav div {
+  padding: auto auto 0px auto;
+  margin: auto;
+}
+
+header nav div a {
   text-decoration: none;
   font-size: 20px;
-  padding: auto auto 0px auto;
-  border: 0px solid black;
+  color: white;
 }
 
 .nav_underline {
   height: 3px; 
-  margin: 5px 8% 10px 8%;
+  margin: 0;
   background-color: white;
 }
 
@@ -38,12 +41,18 @@ header br {
   width:100%;
 }
 
-#banner {
+.banner {
   background-color: #33261E;
   margin: 0;
-  font-size: 40px;
   text-align: center;
-  padding: 30px 0;
+  padding: 20px 0;
+}
+
+.banner h1 {
+  font-size: 100px;
+  font-weight:400;
+  color: white;
+  margin: auto 0;
 }
 
 #banner h1 {
