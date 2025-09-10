@@ -1,9 +1,58 @@
 body {
     font-family: "Poppins", sans-serif;
+    background-color: #01796f;
+    margin: 0;
 }
 
-header {
-    text-align: center;
+header nav {
+  text-align: center;
+  padding: 40px 5% 0 5%;
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: 2fr 125px 125px 125px 125px 3fr;
+  gap: 0px 0px;
+}
+
+header img {
+  width: 100px;
+}
+
+header nav div {
+  padding: auto auto 0px auto;
+  margin: auto;
+}
+
+header nav div a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+.nav_underline {
+  height: 3px; 
+  margin: 0;
+  background-color: white;
+}
+
+header br {
+  border-width: 10px;
+  border-color: black;
+  height: 10px;
+  width:100%;
+}
+
+.banner {
+  background-color: #33261E;
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.banner h1 {
+  font-size: 100px;
+  font-weight:400;
+  color: white;
+  margin: auto 0;
 }
 
 .soaps {
@@ -12,8 +61,7 @@ header {
     text-align: center;
     justify-content: center;    
     background-color: #d3f3ee;
-    margin: 30px 0;
-    padding: 0 auto 30px;
+    padding: 30px;
 }
 
 .soaps img {
@@ -34,12 +82,61 @@ header {
     color: black;
 }
 
-#facebook-icon {
-    fill: black;
-    
-    height: 200px;
-    width: 200px;
+footer {
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px;
+    color: black;
+    background-color: #eaefbd;
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px;
+    column-gap: 30px;
+    justify-content: center;
 }
+
+.contact-footer {
+  text-align: center;
+  margin: 10px auto 0;
+  grid-column: 1 / span 4;
+}
+.contact-footer h3 {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0;
+  padding:0;
+}
+
+.contact-underline {
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    margin: 0 0 30px;
+    padding: 0;
+}
+
+.fb-icon {
+    grid-row: 2 / span 1;
+}
+
+.insta-icon {
+    grid-row: 2 / span 1;
+}
+
+.email-icon {
+  grid-row: 2 / span 1;
+}
+
+.phone-icon {
+  grid-row: 2 / span 1;
+}
+
+footer a svg {
+    fill: black;
+    height: 40px;
+    width: 40px;
+}
+
+
 
 @media only screen and (max-width: 1000px) {
 

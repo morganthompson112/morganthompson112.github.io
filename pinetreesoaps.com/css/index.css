@@ -9,7 +9,7 @@ header nav {
   padding: 40px 5% 0 5%;
   margin: 0 10%;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+  grid-template-columns: 2fr 125px 125px 125px 125px 3fr;
   gap: 0px 0px;
 }
 
@@ -53,10 +53,6 @@ header br {
   font-weight:400;
   color: white;
   margin: auto 0;
-}
-
-#banner h1 {
-  margin: 0;
 }
 
 .body {
