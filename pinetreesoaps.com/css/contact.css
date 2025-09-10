@@ -1,13 +1,28 @@
 .contact-info {
   background-color: #d3f3ee;
+  display: grid;
+  grid-template-columns: 50px 150px 400px;
+}
+.contact-info h3 {
+  font-size: 20;
+  font-weight: 300;
+  grid-row: 1;
+  grid-column: 1 / span 2;
 }
 .contact-info img {
-  height: 400px;
+  width: 400px;
+  grid-row: 1 / span 3;
+  grid-column: 3;
 }
 .contact-info svg {
   fill: white;
   height: 40px;
   width: 40px;
+  text-decoration: none;
+}
+.contact-info span {
+  color: black;
+  text-decoration: none;
 }
 
 

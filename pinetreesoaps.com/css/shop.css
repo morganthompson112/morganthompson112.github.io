@@ -97,13 +97,13 @@ footer {
   font-size: 40px;
   font-weight: 400;
   text-decoration: none;
-  color: #d3f3ee;
+  color: white;
   margin: 0;
   padding: 0;
   line-height: 1;
 }
 .contact-underline {
-    background-color: #d3f3ee;
+    background-color: white;
     width: 100%;
     height: 3px;
     padding: 0;
@@ -124,10 +124,9 @@ footer {
 }
 
 footer a svg {
-    fill: #d3f3ee;
+    fill: white;
     height: 40px;
     width: 40px;
-    
 }
 
 
