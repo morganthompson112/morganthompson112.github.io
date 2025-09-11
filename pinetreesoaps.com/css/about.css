@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 20px;
-  margin: 0 10% 0 10%;
+  padding: 0 10% 0 10%;
+  background-color: #d3f3ee;
 }
 
 .simms h1 {

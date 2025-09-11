@@ -31,6 +31,7 @@
   text-decoration: none;
   font-size: 20px;
   margin: auto auto auto 0;
+  max-height: 40px;
 }
 .fb-icon{
   grid-row: 2;
@@ -67,56 +68,4 @@
   grid-row: 5;
   grid-column: 3;
   padding: 10px;
-}
-
-
-
-
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: #01796f;
-    margin: 0;
-}
-header nav {
-  text-align: center;
-  padding: 40px 5% 0 5%;
-  margin: 0 10%;
-  display: grid;
-  grid-template-columns: 2fr 125px 125px 125px 125px 3fr;
-  gap: 0px 0px;
-}
-header img {
-  width: 100px;
-}
-.nav-div {
-  padding: auto auto 0px auto;
-  margin: auto;
-  color: white;
-}
-.nav-div:hover {
-  padding: auto auto 0px auto;
-  margin: auto;
-  color: #d3f3ee;
-}
-header nav div a {
-  text-decoration: none;
-  font-size: 20px;
-  color: currentColor;
-}
-.nav_underline {
-  height: 3px; 
-  margin: 0;
-  background-color: currentColor;
-}
-.banner {
-  background-color: #33261E;
-  margin: 0;
-  text-align: center;
-  padding: 20px 0;
-}
-.banner h1 {
-  font-size: 100px;
-  font-weight:400;
-  color: white;
-  margin: auto 0;
 }

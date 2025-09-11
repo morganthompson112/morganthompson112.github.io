@@ -1,0 +1,135 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #01796f;
+    margin: 0;
+}
+header nav {
+  text-align: center;
+  padding: 40px 5% 0 5%;
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: 2fr 125px 125px 125px 125px 3fr;
+  gap: 0px 0px;
+}
+header img {
+  width: 100px;
+}
+.nav-div {
+  padding: auto auto 0px auto;
+  margin: auto;
+  color: white;
+  transition-duration: .25s;
+}
+.nav-div:hover {
+  padding: auto auto 0px auto;
+  margin: auto;
+  color: #d3f3ee;
+}
+header nav div a {
+  text-decoration: none;
+  font-size: 20px;
+  color: currentColor;
+}
+.nav_underline {
+  height: 3px; 
+  margin: 0 0 0 50%;
+  background-color: currentColor;
+  width: 0%;
+  transition-duration: .25s;
+}
+.nav-div:hover > .nav_underline {
+  height: 3px; 
+  margin: 0;
+  background-color: currentColor;
+  width: 100%;
+}
+.banner {
+  background-color: #33261e;
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+}
+.banner h1 {
+  font-size: 100px;
+  font-weight:400;
+  color: white;
+  margin: auto 0;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 80px;
+  color: black;
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px;
+  grid-template-rows: auto auto;
+  gap: 0px 30px;
+  justify-content: center;
+  background-color: #33261e;
+}
+
+.contact-footer {
+  text-align: center;
+  margin: 10px auto 0;
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 1;
+  color:white;
+}
+.contact-footer:hover {
+  text-align: center;
+  margin: 10px auto 0;
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 1;
+  color:#d3f3ee;
+}
+.contact-footer a {
+  font-size: 40px;
+  font-weight: 400;
+  text-decoration: none;
+  color: currentColor;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.contact-underline {
+  background-color: currentColor;
+  width: 0;
+  height: 3px;
+  padding: 0;
+  margin: 5px 0 20px 50%;
+  transition-duration: .25s;
+}
+.contact-footer:hover > .contact-underline {
+  background-color: currentColor;
+  width: 100%;
+  height: 3px;
+  padding: 0;
+  margin: 5px 0 20px;
+}
+
+footer > .fb-icon {
+    grid-row: 2 / span 1;
+}
+footer > .insta-icon {
+    grid-row: 2 / span 1;
+}
+footer > .email-icon {
+  grid-row: 2 / span 1;
+}
+footer > .phone-icon {
+  grid-row: 2 / span 1;
+}
+
+footer a svg {
+  fill: white;
+  height: 40px;
+  width: 40px;
+  transition-duration: .25s;
+}
+footer a:hover svg {
+  fill: #d3f3ee;
+  height: 40px;
+  width: 40px;
+}

@@ -1,7 +1,7 @@
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: #01796f;
-    margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #01796f;
+  margin: 0;
 }
 
 header nav {
@@ -53,114 +53,53 @@ header nav div a {
 }
 
 .soaps {
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    text-align: center;
-    justify-content: center;    
-    background-color: #d3f3ee;
-    padding: 30px;
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px;
+  text-align: center;
+  gap: 0 50px;
+  justify-content: center;    
+  background-color: #d3f3ee;
+  padding: 30px;
 }
 
 .soaps img {
-    width: 150px;
-    height: 200px;
-    border-radius: 5px;
+  width: 149px;
+  height: 200px;
+  border-radius: 5px;
 }
 
 .soaps h3 {
-    margin: 0;
-    font-weight: 400;
-
+  margin: 0 auto;
+  font-weight: 400;
+  width: 150px;
 }
 
 .soaps a {
-    margin: 15px auto 15px;
-    text-decoration: none;
-    color: black;
-}
-
-footer {
-  text-align: center;
-  margin: 50px auto;
-  padding: 30px;
-  color: black;
-  display: grid;
-  grid-template-columns: 40px 40px 40px 40px;
-  grid-template-rows: auto auto;
-  gap: 0px 30px;
-  justify-content: center;
-}
-
-.contact-footer {
-  text-align: center;
-  margin: 10px auto 0;
-  grid-column: 1 / span 4;
-  grid-row: 1 / span 1;
-  color:white;
-}
-.contact-footer:hover {
-  text-align: center;
-  margin: 10px auto 0;
-  grid-column: 1 / span 4;
-  grid-row: 1 / span 1;
-  color:#d3f3ee;
-}
-.contact-footer a {
-  font-size: 40px;
-  font-weight: 400;
+  margin: 15px auto 15px;
   text-decoration: none;
-  color: currentColor;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-}
-.contact-underline {
-    background-color: currentColor;
-    width: 100%;
-    height: 3px;
-    padding: 0;
-    margin: 5px 0 20px;
-}
-
-.fb-icon {
-    grid-row: 2 / span 1;
-}
-.insta-icon {
-    grid-row: 2 / span 1;
-}
-.email-icon {
-  grid-row: 2 / span 1;
-}
-.phone-icon {
-  grid-row: 2 / span 1;
-}
-
-footer a svg {
-    fill: white;
-    height: 40px;
-    width: 40px;
-}
-footer a:hover svg {
-    fill: #d3f3ee;
-    height: 40px;
-    width: 40px;
+  color: black;
 }
 
 
 
 @media only screen and (max-width: 1000px) {
 
-    .soaps {
-        grid-template-columns: 200px 200px 200px;
-    }
+  .soaps {
+    grid-template-columns: 150px 150px 150px;
+  }
 
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 600px) {
 
-    .soaps {
-        grid-template-columns: 200px 200px;
-    }
+  .soaps {
+    grid-template-columns: 55% 55%;
+    gap: 0 0px;
+  }
+	.soaps img {
+		width: 95%;
+		height: 190px;
+	}
 
 }
