@@ -2,6 +2,7 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: #01796f;
     margin: 0;
+    padding: 0;
 }
 header nav {
   text-align: center;
@@ -146,36 +147,28 @@ footer a:hover svg {
 
   header nav {
     padding: 40px auto 0 auto;
-    grid-template-columns: 75px 150px 150px 75px;
-    gap: 20px 0px;
     justify-content: center;
+    grid-template-columns: 100px 100px 100px 100px;
+    
+    height: 70px;
   }
   header img {
     display: none;
   }
-  .nav-div {
-    padding: 0;
-    height: 40px;
-  }
   .nav-div a {
     font-size: 20px;
-    height: 30px;
     padding: 0;
     margin: 0;
   }
   .nav-div svg {
     display: block;
     padding: 10px;
-    margin: auto;
-    width: 30px;
-    height: 30px;
+    margin: 0px auto auto auto;
+    width: 40px;
+    height: 40px;
     line-height: 0;
   }
-  .nav-home {
-    grid-row: 1;
-    grid-column: 2;
-  }
-  .nav-home a span {
+  .nav-div span {
     display: none;
     width: 0;
     height: 0;
@@ -185,11 +178,7 @@ footer a:hover svg {
   .nav-home .nav_underline {
     display: none;
   }
-  .nav-shop {
-    grid-row: 1;
-    grid-column: 3;
-  }
-  .nav-shop .nav_underline {
+  .nav_underline {
     display: none;
   }
   .nav-shop a span {
@@ -197,14 +186,5 @@ footer a:hover svg {
     width: 0;
     height: 0;
   }
-  .nav-about {
-    grid-row: 2;
-    grid-column: 2;
-  }
-  .nav-contact {
-    grid-row: 2;
-    grid-column: 3;
-  }
-
 
 }

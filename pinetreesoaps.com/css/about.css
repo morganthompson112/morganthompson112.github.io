@@ -1,9 +1,9 @@
 .simms {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 500px 500px;
   gap: 20px 20px;
-  padding: 0 10% 0 10%;
-  background-color: #d3f3ee;
+  justify-content: center;
+  background-color: hsl(171, 57%, 89%);
 }
 
 .simms h1 {
@@ -13,11 +13,32 @@
 }
 
 .simms p {
-  font-size: 30px;
+  font-size: 26px;
 }
 
 .simms img {
   width: 500px;
   grid-column: 2 / span 1;
   grid-row: 2 / span 3;
+}
+
+@media only screen and (max-width: 1050px) {
+
+  .simms {
+    grid-template-columns: 90%;
+    max-width: 500px;
+    padding: auto;
+  }
+  .simms h1 {
+    grid-column: 1;
+  }
+  .simms p {
+    width: 100%;
+    max-width: 500px;
+  }
+  .simms img {
+    grid-row: 5;
+    grid-column: 1;
+  }
+
 }

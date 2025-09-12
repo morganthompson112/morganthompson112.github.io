@@ -1,7 +1,8 @@
 .contact-info {
   background-color: #d3f3ee;
+  padding: auto;
   display: grid;
-  grid-template-columns: 50px 40px 300px 400px;
+  grid-template-columns: 40px 360px 400px;
   grid-template-rows: 150px 75px 75px 75px 75px 85px;
   gap: 0 0;
   justify-content: center;
@@ -11,14 +12,14 @@
   font-weight: 400;
   line-height: 1;
   grid-row: 1;
-  grid-column: 1 / span 3;
+  grid-column: 1 / span 2;
   text-align: center;
 }
 .contact-info img {
   width: 400px;
   height: 535px;
   grid-row: 1 / span 5;
-  grid-column: 4;
+  grid-column: 3;
 }
 .contact-info svg {
   fill: black;
@@ -33,39 +34,42 @@
   margin: auto auto auto 0;
   max-height: 40px;
 }
-.fb-icon{
-  grid-row: 2;
-  grid-column: 2;
+.contact-text {
+  padding: 20px;
 }
-.fb-text {
-  grid-row: 2;
-  grid-column: 3;
-  padding: 10px;
-}
-.insta-icon{
-  grid-row: 3;
-  grid-column: 2;
-}
-.insta-text {
-  grid-row: 3;
-  grid-column: 3;
-  padding: 10px;
-}
-.email-icon{
-  grid-row: 4;
-  grid-column: 2;
-}
-.email-text {
-  grid-row: 4;
-  grid-column: 3;
-  padding: 10px;
-}
-.phone-icon{
-  grid-row: 5;
-  grid-column: 2;
-}
-.phone-text {
-  grid-row: 5;
-  grid-column: 3;
-  padding: 10px;
+
+@media only screen and (max-width: 800px) {
+
+  .contact-info {
+    grid-template-columns: 275px 525px;
+    padding: 0 20%;
+    grid-template-rows: 120px 65px 65px 65px 65px 1fr;
+    padding: max
+  }
+  .contact-info h3 {
+    max-width: 70vw;
+    margin: auto;
+  }
+  .contact-info img {
+    max-width: 100vw;
+    max-height: 133.75vw;
+    grid-row: 6;
+    grid-column: 1 / span 2;
+    margin: auto;
+  }
+  .contact-icon {
+    width: 40px;
+    max-height: 40px;
+    padding-left: 90%;
+  }
+  .contact-info svg {
+    width: 10vw;
+    max-width: 45px;
+    height: 10vw;  
+    max-height: 45px;
+  }
+  .contact-text {
+    font-size: 10vw;
+  }
+
 }
