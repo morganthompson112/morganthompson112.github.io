@@ -1,4 +1,7 @@
-
+.body {
+  height: 500px;
+  background-color: #d3f3ee;
+}
 
 @media only screen and (max-width: 1000px) {
   
