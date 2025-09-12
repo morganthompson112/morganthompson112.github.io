@@ -54,9 +54,9 @@ header nav div a {
 
 .soaps {
   display: grid;
-  grid-template-columns: 150px 150px 150px 150px;
+  grid-template-columns: 175px 175px 175px 175px;
   text-align: center;
-  gap: 0 50px;
+  gap: 10px 0px;
   justify-content: center;    
   background-color: #d3f3ee;
   padding: 30px;
@@ -65,7 +65,7 @@ header nav div a {
 .soaps img {
   width: 149px;
   height: 200px;
-  border-radius: 5px;
+  padding-top: 10px;
 }
 
 .soaps h3 {
@@ -75,9 +75,15 @@ header nav div a {
 }
 
 .soaps a {
-  margin: 15px auto 15px;
+  padding: 15px auto 15px;
   text-decoration: none;
   color: black;
+  transition-duration: .25s;
+  border-radius: 10px;
+}
+.soaps a:hover {
+  background-color: #fff8c7;
+  opacity: .75;
 }
 
 
