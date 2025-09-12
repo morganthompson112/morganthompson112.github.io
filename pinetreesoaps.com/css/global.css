@@ -46,9 +46,6 @@ header nav div a {
   background-color: currentColor;
   width: 100%;
 }
-.list-toggle {
-  display: none;
-}
 .banner {
   background-color: #33261e;
   margin: 0;
