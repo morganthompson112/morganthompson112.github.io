@@ -148,7 +148,7 @@ footer a:hover svg {
   header nav {
     padding: 40px auto 0 auto;
     justify-content: center;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: 25% 25% 25% 25%;
     
     height: 70px;
   }
