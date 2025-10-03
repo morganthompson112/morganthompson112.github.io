@@ -1,6 +1,6 @@
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #01796f;
+    background-color: #006E4B;
     margin: 0;
     padding: 0;
 }
@@ -15,9 +15,16 @@ header nav {
 header img {
   width: 100px;
   height: 100px;
+  padding: 20px;
+}
+.wavy-circle {
+  --s: 140px; /* adjust to control the size */
+
   background-color: #fff8c7;
-  border-radius: 100px;
-  padding: 15px;
+  width: var(--s); 
+  aspect-ratio: 1;
+  --g:/calc(var(--s)*0.174) calc(var(--s)*0.174) radial-gradient(50% 50%,#000 99%,#0000 101%) no-repeat;
+  mask: calc(50% + var(--s)*0.39) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*0.351) calc(50% + var(--s)*0.169) var(--g),calc(50% + var(--s)*0.243) calc(50% + var(--s)*0.305) var(--g),calc(50% + var(--s)*0.087) calc(50% + var(--s)*0.38) var(--g),calc(50% + var(--s)*-0.087) calc(50% + var(--s)*0.38) var(--g),calc(50% + var(--s)*-0.243) calc(50% + var(--s)*0.305) var(--g),calc(50% + var(--s)*-0.351) calc(50% + var(--s)*0.169) var(--g),calc(50% + var(--s)*-0.39) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*-0.351) calc(50% + var(--s)*-0.169) var(--g),calc(50% + var(--s)*-0.243) calc(50% + var(--s)*-0.305) var(--g),calc(50% + var(--s)*-0.087) calc(50% + var(--s)*-0.38) var(--g),calc(50% + var(--s)*0.087) calc(50% + var(--s)*-0.38) var(--g),calc(50% + var(--s)*0.243) calc(50% + var(--s)*-0.305) var(--g),calc(50% + var(--s)*0.351) calc(50% + var(--s)*-0.169) var(--g),radial-gradient(calc(var(--s)*0.458),#000 99%,#0000 101%) subtract,calc(50% + var(--s)*0.517) calc(50% + var(--s)*0.118) var(--g),calc(50% + var(--s)*0.415) calc(50% + var(--s)*0.331) var(--g),calc(50% + var(--s)*0.23) calc(50% + var(--s)*0.478) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*0.531) var(--g),calc(50% + var(--s)*-0.23) calc(50% + var(--s)*0.478) var(--g),calc(50% + var(--s)*-0.415) calc(50% + var(--s)*0.331) var(--g),calc(50% + var(--s)*-0.517) calc(50% + var(--s)*0.118) var(--g),calc(50% + var(--s)*-0.517) calc(50% + var(--s)*-0.118) var(--g),calc(50% + var(--s)*-0.415) calc(50% + var(--s)*-0.331) var(--g),calc(50% + var(--s)*-0.23) calc(50% + var(--s)*-0.478) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*-0.531) var(--g),calc(50% + var(--s)*0.23) calc(50% + var(--s)*-0.478) var(--g),calc(50% + var(--s)*0.415) calc(50% + var(--s)*-0.331) var(--g),calc(50% + var(--s)*0.517) calc(50% + var(--s)*-0.118) var(--g);
 }
 .nav-div {
   padding: auto auto 0px auto;
@@ -28,7 +35,7 @@ header img {
 .nav-div:hover {
   padding: auto auto 0px auto;
   margin: auto;
-  color: #d3f3ee;
+  color: #fff8c7;
 }
 header nav div a {
   text-decoration: none;
@@ -52,7 +59,7 @@ header nav div a {
   width: 100%;
 }
 .banner {
-  background-color: #33261e;
+  background-color: #4C301F;
   margin: 0;
   text-align: center;
   padding: 20px 0;
@@ -75,7 +82,7 @@ footer {
   grid-template-rows: auto auto;
   gap: 0px 30px;
   justify-content: center;
-  background-color: #33261e;
+  background-color: #4C301F;
 }
 
 .contact-footer {
@@ -90,7 +97,7 @@ footer {
   margin: 10px auto 0;
   grid-column: 1 / span 4;
   grid-row: 1 / span 1;
-  color:#d3f3ee;
+  color:#fff8c7;
 }
 .contact-footer a {
   font-size: 40px;
@@ -137,7 +144,7 @@ footer a svg {
   transition-duration: .25s;
 }
 footer a:hover svg {
-  fill: #d3f3ee;
+  fill: #fff8c7;
   height: 40px;
   width: 40px;
 }
