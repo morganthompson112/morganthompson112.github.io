@@ -1,5 +1,7 @@
 .contact-container {
   background-color: #D8FFF3;
+  width: 100%;
+  overflow: hidden;
 }
 .contact-info {
   padding: auto;
