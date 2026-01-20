@@ -34,14 +34,14 @@ header img {
 }
 .nav-div {
   padding: auto auto 0px auto;
-  margin: auto;
+  margin: auto 0;
   color: white;
   transition-duration: .25s;
   min-width: 166px;
 }
 .nav-div:hover {
   padding: auto auto 0px auto;
-  margin: auto;
+  margin: auto 0;
   color: #fff8c7;
 }
 .nav-div a {
@@ -54,16 +54,16 @@ header img {
 }
 .nav_underline {
   height: 3px; 
-  margin: 0 0 0 50%;
+  margin: auto auto auto 50%;
   background-color: currentColor;
   width: 0%;
   transition-duration: .25s;
 }
 .nav-div:hover > .nav_underline {
   height: 3px; 
-  margin: 0;
+  margin: auto auto auto 25%;
   background-color: currentColor;
-  width: 100%;
+  width: 50%;
 }
 .banner {
   background-color: #4C301F;

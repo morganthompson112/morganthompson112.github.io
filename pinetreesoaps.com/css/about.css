@@ -1,63 +1,12 @@
 .about-container {
   background-color: #D8FFF3;
+  width: 100%;
 }
-.simms {
+
+.about {
   display: grid;
   grid-template-columns: 500px 500px;
   gap: 20px 20px;
   justify-content: center;
   margin: auto;
-}
-
-.simms h1 {
-  text-align: center;
-  line-height: 1;
-  padding: 20px;
-  margin: 0 0 -30px 0;
-}
-
-.simms p {
-  font-size: 26px;
-  grid-row: 2;
-  grid-column: 1;
-}
-
-.simms img {
-  grid-row: 1 / span 2;
-  width: 500px;
-  margin: 0;
-  padding: 0;
-}
-
-@media only screen and (max-width: 1100px) {
-  .about-container {
-    width: 100%;
-  }
-  .simms {
-    grid-template-columns: 100%;
-    max-width: 500px;
-  }
-  .simms h1 {
-    margin-bottom: -15px;
-  }
-  .simms p {
-    margin: 0 auto 20px auto;
-    width: 90%;
-    max-width: 500px;
-    font-size: 20px;
-    grid-row: 3;
-  }
-  .simms img {
-    grid-row: 2;
-    grid-column: 1;
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-
-  .simms p {
-    font-size: 5vw;
-  }  
-
 }
