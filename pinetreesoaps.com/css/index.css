@@ -6,7 +6,6 @@
 .shop {
   margin: auto;
   width: 100%;
-  max-width: 1000px;
   text-align: center;
   justify-content: center;
   overflow: hidden;
@@ -19,13 +18,17 @@
 .shop a h3 {
   position: absolute;
   width: inherit;
+  height: 10vw;
   max-width: inherit;
   color: white;
-  font-size: 100px;
-  margin-top: 90px;
+  font-size: 10vw;
+  margin: auto;
+  line-height:30vw;
+  z-index: 1;
 }
 .shop a img {
-  width: inherit;
+  width: 100%;
+  opacity: 90%;
 }
 
 
