@@ -15,7 +15,7 @@ header nav {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
   padding: 25px 20px 0 20px;
-  gap: 0px 0;
+  gap: 0px 75px;
   justify-content: center;
 }
 header img {
@@ -37,7 +37,7 @@ header img {
   margin: auto 0;
   color: white;
   transition-duration: .25s;
-  min-width: 166px;
+  min-width: auto;
 }
 .nav-div:hover {
   padding: auto auto 0px auto;
@@ -61,9 +61,9 @@ header img {
 }
 .nav-div:hover > .nav_underline {
   height: 3px; 
-  margin: auto auto auto 25%;
+  margin: auto auto auto 0%;
   background-color: currentColor;
-  width: 50%;
+  width: 100%;
 }
 .banner {
   background-color: #4C301F;
