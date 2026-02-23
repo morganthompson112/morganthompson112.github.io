@@ -39,7 +39,10 @@ header img {
   transition-duration: .25s;
   min-width: auto;
 }
-.nav-div:hover {
+.nav-current {
+  color: #fff8c7;
+}
+.nav-div:not(.nav-current):hover {
   padding: auto auto 0px auto;
   margin: auto 0;
   color: #fff8c7;
@@ -59,11 +62,15 @@ header img {
   width: 0%;
   transition-duration: .25s;
 }
-.nav-div:hover > .nav_underline {
+.nav-div:not(.nav-current):hover > .nav_underline {
   height: 3px; 
   margin: auto auto auto 0%;
   background-color: currentColor;
   width: 100%;
+}
+.nav-current > .nav_underline {
+  width: 100%;
+  margin: auto auto auto 0;
 }
 .banner {
   background-color: #4C301F;
@@ -156,7 +163,7 @@ footer a:hover svg {
   width: 40px;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 920px) {
   header nav {
     column-gap: 40px;
   }
