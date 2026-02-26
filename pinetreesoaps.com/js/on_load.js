@@ -1,2 +1,7 @@
 var d = document.getElementsByClassName("on-load");
-d[0].className += " loaded";
+
+for(var i = 0; i < d.length; i++) {
+  if (d[i]) {
+    d[i].className += " loaded";
+  }
+}

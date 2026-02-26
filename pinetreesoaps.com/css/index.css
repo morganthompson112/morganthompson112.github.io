@@ -24,6 +24,7 @@
   display: inline-block;
   color: white;
   background-color:#006e4b1f;
+  transition: 1s ease 2s;
 }
 .shop a h3 {
   line-height: 0;
@@ -104,6 +105,9 @@
 
 
 @media only screen and (max-width: 650px) {
+  .shop a.loaded {
+    background-color:#006e4b73;
+  }
   #shop-banner {
     animation: banner-pine-move 4s ease 1s normal infinite;
   }
