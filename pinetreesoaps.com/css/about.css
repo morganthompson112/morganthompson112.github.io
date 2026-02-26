@@ -1,3 +1,8 @@
+:root {
+  --width: 1000px;
+  --column-width: calc(var(--width) / 2);
+}
+
 .about-container {
   background-color: #D8FFF3;
   width: 100%;
@@ -5,8 +10,18 @@
 
 .about {
   display: grid;
-  grid-template-columns: 500px 500px;
+  width: var(--width);
+  grid-template-columns: var(--column-width) var(--column-width);
   gap: 20px 20px;
   justify-content: center;
   margin: auto;
+  padding: auto;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1100px) {
+  :root {
+    --width: 95%; 
+    --column-width: calc(var(--width) / 2);
+  }
 }
