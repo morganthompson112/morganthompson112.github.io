@@ -105,12 +105,12 @@
 
 @media only screen and (max-width: 650px) {
   #shop-banner {
-    animation: banner-pine-move 4s ease 2s normal infinite;
+    animation: banner-pine-move 4s ease 1s normal infinite;
   }
   #shop-buy {
     padding-top: 10vw;
     opacity: 0;
-    animation: banner-buy-move 4s ease 2s normal infinite;
+    animation: banner-buy-move 4s ease 1s normal infinite;
   }
 
   @keyframes banner-pine-move {
