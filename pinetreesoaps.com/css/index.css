@@ -22,36 +22,29 @@
   width: 100%;
   height: inherit;
   display: inline-block;
-  transition-duration: .5s;
   color: white;
   background-color:#006e4b1f;
-}
-.shop a:hover {
-  background-color:#006e4b73;
-  color: #fff8c7;
 }
 .shop a h3 {
   line-height: 0;
   max-width: inherit;
   color: inherit;
   font-size: 10vw;
-  transition-duration: inherit;
   opacity: 1;
   padding-top: 16vw;
   margin: 0;
 }
-.shop a:hover > #shop-banner {
+#shop-banner:not(.loaded) {
   opacity: 0;
   padding-top: 7vw;
 }
-#shop-buy {
-  opacity: 0;
-  transition-duration: inherit;
-  padding-top: 9vw;
-}
-.shop a:hover > #shop-buy {
+#shop-banner:is(.loaded) {
   opacity: 1;
+  padding-top: 16vw;
+  transition: .5s ease-in-out;
 }
+
+
 
 
 .simms {
@@ -83,7 +76,69 @@
   padding: 0;
 }
 
+@media only screen and (min-width: 651px) {
+  .shop a {
+    transition: .5s ease-in-out;
+  }
+  .shop a h3 {
+    transition: inherit;
+  }
+
+  .shop a:hover > #shop-banner {
+    opacity: 0;
+    padding-top: 7vw;
+  }
+  .shop a:hover {
+    background-color:#006e4b73;
+    color: #fff8c7;
+  }
+  #shop-buy {
+    opacity: 0;
+    transition: inherit;
+    padding-top: 9vw;
+  }
+  .shop a:hover > #shop-buy {
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+  #shop-banner {
+    animation: banner-pine-move 4s ease 2s normal infinite;
+  }
+  #shop-buy {
+    padding-top: 10vw;
+    opacity: 0;
+    animation: banner-buy-move 4s ease 2s normal infinite;
+  }
+
+  @keyframes banner-pine-move {
+    0%, 25%, 100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    50%, 75% {
+      transform: translate(0, -10vw);
+      opacity: 0;
+    }
+  }
+  @keyframes banner-buy-move {
+    0%, 25%, 100% {
+      transform: translate(0, 0);
+      opacity: 0;
+    }
+    50%, 75% {
+      transform: translate(0, -10vw);
+      opacity: 1;
+    }
+  }
+}
+
+
+
 @media only screen and (max-width: 1100px) {
+  
   .about-container {
     width: 100%;
   }

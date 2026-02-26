@@ -38,9 +38,13 @@
   grid-template-columns: auto auto;
   gap: 0 15px;
   justify-content: left;
+  transition-duration: .25s;
+}
+.contact-link:hover {
+  color:#00422c;
 }
 .contact-link svg {
-  fill: black;
+  fill: currentColor;
   height: 40px;
   width: 40px;
   text-decoration: none;

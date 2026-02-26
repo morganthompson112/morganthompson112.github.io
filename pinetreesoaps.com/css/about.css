@@ -1,11 +1,55 @@
 :root {
   --width: 1000px;
   --column-width: calc(var(--width) / 2);
+  
+  --head-img-height: 32vw;
 }
 
 .about-container {
   background-color: #D8FFF3;
   width: 100%;
+}
+
+.about-container .header {
+  width: 100%;
+  height: var(--head-img-height);
+  background-color:black;
+}
+.about-container .header img {
+  width: 100%;
+  position: absolute;
+  display: block;
+  z-index: 1;
+  height: inherit;
+  opacity:.75;
+}
+.about-container .header:not(.loaded) h3 {
+  position: relative;
+  line-height: 1;
+  margin: 0;
+  z-index: 2;
+  color: white;
+
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10vw;
+
+  padding-top: calc(-1 * var(--head-img-height) - 10vw );
+  opacity: 0;
+}
+.about-container .header:is(.loaded) h3 {
+  position: relative;
+  line-height: 1;
+  margin: 0;
+  z-index: 2;
+  color: white;
+
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 9.2vw;
+  font-size: 10vw;
+  transition: .5s ease-in-out;
+  opacity: 1;
 }
 
 .about {
