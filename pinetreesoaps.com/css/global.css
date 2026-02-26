@@ -1,13 +1,15 @@
+:root {
+  --nav-logo-size: 120px;
+}
+
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #006E4B;
     margin: 0;
     padding: 0;
     width: 100%;
 }
 header {
   width: 100%;
-  height: 147px;
   overflow: hidden;
   position: sticky;
   top:0;
@@ -18,21 +20,26 @@ header {
 header nav {
   text-align: center;
   display: grid;
-  grid-template-columns: auto auto auto auto auto;
-  padding: 10px 20px;
+  grid-template-columns: var(--nav-logo-size) auto auto auto auto;
+  padding: 10px 20px calc(var(--nav-logo-size) / 4.75) 20px;
   margin: 0;
-  gap: 0px 75px;
+  gap: 0px 65px;
   justify-content: center;
   background-color:#006E4B;
+  z-index: -2;
 }
 header img {
-  width: 80px;
-  height: 80px;
-  padding: 20px;
+  position: relative;
+  width: 70%;
+  height: auto;
+  z-index: 2;
+
+  padding: 12% 0 0 0%;
 }
 .wavy-circle {
-  --s: 120px; /* adjust to control the size */
+  --s: var(--nav-logo-size); /* adjust to control the size */
 
+  position: absolute;
   background-color: #fff8c7;
   width: var(--s); 
   aspect-ratio: 1;
@@ -171,8 +178,8 @@ footer a:hover svg {
 }
 
 @media only screen and (max-width: 920px) {
-  header {
-    height: 133spx;
+  :root {
+    --nav-logo-size: 90px;
   }
   header nav {
     column-gap: 40px;
@@ -183,13 +190,6 @@ footer a:hover svg {
   .nav-div a {
     font-size: 3vw;
   }
-  .wavy-circle {
-    --s: 100px;
-  }
-  .wavy-circle img {
-    width: 65%;
-    height: auto;
-  }
 
   .banner h1 {
     font-size: 10vw;
@@ -197,28 +197,27 @@ footer a:hover svg {
 }
 @media only screen and (max-width: 650px) {
 
+  :root {
+    --nav-logo-size: 18vw;
+  }
   header {
-    height: 21.5vw;
+    height: calc(var(--nav-logo-size) + 5vw);
   }
   header nav {
-    width: 100%;
-    padding: 40px auto 0 auto;
     margin: 0;
     justify-content: center;
-    grid-template-columns: 10% auto auto auto auto;
-    height: 22.5vw;
-    min-height: calc(100px);
+    grid-template-columns: var(--nav-logo-size) auto auto auto auto;
     gap: 0 0;
   }
-  header nav
   .wavy-circle {
-    text-align: right;
-    --s: 13vw;
-    margin-left: -6vw;
-  }
-  .wavy-circle img {
-    width: 65%;
-    margin: 2vw 0 0 calc(-1.5vw - 5%);
+    --s: var(--nav-logo-size); /* adjust to control the size */
+
+    position: absolute;
+    background-color: #fff8c7;
+    width: var(--s); 
+    aspect-ratio: 1;
+    --g:/calc(var(--s)*0.174) calc(var(--s)*0.174) radial-gradient(50% 50%,#000 99%,#0000 101%) no-repeat;
+    mask: calc(50% + var(--s)*0.39) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*0.351) calc(50% + var(--s)*0.169) var(--g),calc(50% + var(--s)*0.243) calc(50% + var(--s)*0.305) var(--g),calc(50% + var(--s)*0.087) calc(50% + var(--s)*0.38) var(--g),calc(50% + var(--s)*-0.087) calc(50% + var(--s)*0.38) var(--g),calc(50% + var(--s)*-0.243) calc(50% + var(--s)*0.305) var(--g),calc(50% + var(--s)*-0.351) calc(50% + var(--s)*0.169) var(--g),calc(50% + var(--s)*-0.39) calc(50% + var(--s)*0) var(--g),calc(50% + var(--s)*-0.351) calc(50% + var(--s)*-0.169) var(--g),calc(50% + var(--s)*-0.243) calc(50% + var(--s)*-0.305) var(--g),calc(50% + var(--s)*-0.087) calc(50% + var(--s)*-0.38) var(--g),calc(50% + var(--s)*0.087) calc(50% + var(--s)*-0.38) var(--g),calc(50% + var(--s)*0.243) calc(50% + var(--s)*-0.305) var(--g),calc(50% + var(--s)*0.351) calc(50% + var(--s)*-0.169) var(--g),radial-gradient(calc(var(--s)*0.458),#000 99%,#0000 101%) subtract,calc(50% + var(--s)*0.517) calc(50% + var(--s)*0.118) var(--g),calc(50% + var(--s)*0.415) calc(50% + var(--s)*0.331) var(--g),calc(50% + var(--s)*0.23) calc(50% + var(--s)*0.478) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*0.531) var(--g),calc(50% + var(--s)*-0.23) calc(50% + var(--s)*0.478) var(--g),calc(50% + var(--s)*-0.415) calc(50% + var(--s)*0.331) var(--g),calc(50% + var(--s)*-0.517) calc(50% + var(--s)*0.118) var(--g),calc(50% + var(--s)*-0.517) calc(50% + var(--s)*-0.118) var(--g),calc(50% + var(--s)*-0.415) calc(50% + var(--s)*-0.331) var(--g),calc(50% + var(--s)*-0.23) calc(50% + var(--s)*-0.478) var(--g),calc(50% + var(--s)*0) calc(50% + var(--s)*-0.531) var(--g),calc(50% + var(--s)*0.23) calc(50% + var(--s)*-0.478) var(--g),calc(50% + var(--s)*0.415) calc(50% + var(--s)*-0.331) var(--g),calc(50% + var(--s)*0.517) calc(50% + var(--s)*-0.118) var(--g);
   }
   .nav-div a {
     font-size: 20px;
@@ -227,8 +226,8 @@ footer a:hover svg {
     display: block;
     padding: 2vw;
     margin: 0.75vw auto auto auto;
-    width: 7vw;
-    height: 7vw;
+    width: 12vw;
+    height: 12vw;
     line-height: 0;
   }
   .nav-div span {
