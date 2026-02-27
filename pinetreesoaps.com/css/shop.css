@@ -1,112 +1,17 @@
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #01796f;
-  margin: 0;
+.shop-container {
+  background-color: #D8FFF3;
+  width: 100%;
 }
-
-header nav {
+.shop {
+  height: 500px;
+  max-width: 500px;
   text-align: center;
-  padding: 40px 5% 0 5%;
-  margin: 0 10%;
-  display: grid;
-  grid-template-columns: 2fr 125px 125px 125px 125px 3fr;
-  gap: 0px 0px;
-}
-
-header img {
-  width: 100px;
-}
-
-.nav-div {
-  padding: auto auto 0px auto;
-  margin: auto;
-  color: white;
-}
-.nav-div:hover {
-  padding: auto auto 0px auto;
-  margin: auto;
-  color: #d3f3ee;
-}
-header nav div a {
-  text-decoration: none;
-  font-size: 20px;
-  color: currentColor;
-}
-.nav_underline {
-  height: 3px; 
-  margin: 0;
-  background-color: currentColor;
-}
-
-.banner {
-  background-color: #33261E;
-  margin: 0;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.banner h1 {
-  font-size: 100px;
-  font-weight:400;
-  color: white;
-  margin: auto 0;
-}
-
-.soaps {
-  display: grid;
-  grid-template-columns: 175px 175px 175px 175px;
-  text-align: center;
-  gap: 10px 0px;
-  justify-content: center;    
-  background-color: #d3f3ee;
-  padding: 30px;
-}
-
-.soaps img {
-  width: 149px;
-  height: 200px;
-  padding-top: 10px;
-}
-
-.soaps h3 {
   margin: 0 auto;
-  font-weight: 400;
-  width: 150px;
+  padding-top: 50px;
 }
-
-.soaps a {
-  padding: 15px auto 15px;
-  text-decoration: none;
-  color: black;
-  transition-duration: .25s;
-  border-radius: 10px;
+.shop h3 {
+  font-size: 40px;
 }
-.soaps a:hover {
-  background-color: #fff8c7;
-  opacity: .75;
-}
-
-
-
-@media only screen and (max-width: 1000px) {
-
-  .soaps {
-    grid-template-columns: 175px 175px 175px;
-  }
-
-}
-
-
-@media only screen and (max-width: 600px) {
-
-  .soaps {
-    grid-template-columns: 55% 55%;
-    gap: 0 0px;
-  }
-	.soaps img {
-		width: 95%;
-    max-width: 150px;
-		height: 190px;
-	}
-
+.shop span {
+  font-size: 1em;
 }

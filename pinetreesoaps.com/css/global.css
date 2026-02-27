@@ -180,14 +180,6 @@ footer a:hover svg {
   height: 40px;
   width: 40px;
 }
-.footer-color {
-  background-color:#4C301F;
-  width: 100%;
-  margin-bottom: -200px;
-  z-index: -1;
-  position: sticky;
-  bottom: 0;
-}
 
 @media only screen and (max-width: 920px) {
   :root {
