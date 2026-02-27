@@ -105,7 +105,6 @@ header img {
 
 footer {
   text-align: center;
-  padding: 80px;
   color: black;
   display: grid;
   grid-template-columns: 40px 40px 40px 40px;
@@ -113,8 +112,8 @@ footer {
   gap: 0px 30px;
   justify-content: center;
 
-  padding: 80 80 9999px;
-  margin: 0 0 -9999px;
+  padding: 80px;
+
   background-color: #4C301F;
 }
 
@@ -180,6 +179,14 @@ footer a:hover svg {
   fill: #fff8c7;
   height: 40px;
   width: 40px;
+}
+.footer-color {
+  background-color:#4C301F;
+  width: 100%;
+  margin-bottom: -200px;
+  z-index: -1;
+  position: sticky;
+  bottom: 0;
 }
 
 @media only screen and (max-width: 920px) {
