@@ -1,11 +1,24 @@
+:root {
+  overflow: hidden;
+  height: 100vh;
+}
 
 .shop-container {
   background-color: #D8FFF3;
   width: 100%;
-}
-.shop-container iframe {
-  width: 100%;
-  height: 1000px;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+}
+.shop-container iframe {
+  width: 100vw;
+  height: calc( 90vh );
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .shop-container iframe {
+    height: 88vh;
+  }
 }
