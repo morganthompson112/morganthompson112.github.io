@@ -1,0 +1,66 @@
+:root {
+  --thank-you-width: 800px;
+  --thank-you-height: 550px;
+  --thank-you-top: 100px;
+  --ty-bg-width: calc( var(--thank-you-width) * .65);
+  --ty-bg-left: calc(50vw - ( var( --ty-bg-width) * .5 ));
+}
+
+.container {
+  background-color: #D8FFF3;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.thank-you {
+  display: grid;
+  grid-template-columns: var(--thank-you-width);
+  grid-template-rows: 100px, 50px, 50px;
+  row-gap: 0;
+  justify-content: center;
+  text-align: center;
+  min-height: var(--thank-you-height);
+  padding: 20px 0;
+  z-index: 2;
+}
+.thank-you h3 {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+  height: 50px;
+  padding: 150px 0 0;
+  margin: 0;
+  z-index: inherit;
+}
+.thank-you span {
+  margin: 0;
+  padding:0;
+  z-index: inherit;
+  font-size: 23px;
+}
+.thank-you a {
+  z-index: inherit;
+  padding: 0;
+  margin: 0;
+  color: currentColor;
+  font-size: 23px;
+}
+
+.thank-you-bg {
+  left: var(--ty-bg-left);
+  position:absolute;
+  z-index: 1;
+}
+.thank-you-bg img {
+  width: var(--ty-bg-width);
+  height:calc( var(--thank-you-height));
+  opacity: .3;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 800px) {
+  .thank-you {
+    grid-template-columns: 95%;
+  }
+}
