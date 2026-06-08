@@ -34,10 +34,12 @@
   position:fixed;
   left: 0;
   top: 0;
+  transition: 1s;
+
   width: 100vw;
   height: 100vh;
   padding: 0;
-  background-color: rgba(0, 0, 0, .9);
+  background-color: #0a1931;
   z-index: 2;
 
   display:grid;
@@ -49,7 +51,7 @@
 
 .project-iframe-header {
   display: grid;
-  grid-template-columns: 40vw 50vw 10vw;
+  grid-template-columns: 40vw 20vw 40vw;
   color: white;
   align-items:center;
   max-height: 70px;
@@ -59,28 +61,26 @@
   font-size: 3vw;
   margin: 0 auto 0 3vw;
 }
-.project-iframe-header a {
-  display: inline;
-  color: inherit;
-  font-size: 3vw;
-  width: min-content;
-  margin: 0 auto 0 0;
-}
 .project-iframe-header button {
-  border: none;
-  color: inherit;
-  background-color: transparent;
-  font-size: inherit;
+  background-color: #4a7fa7;
   cursor: pointer;
-  margin: 0 3vw 0 auto;
-
-  height: auto;
-  width: 90%;
+  border: none;
+  border-radius: 5px;
+  display: inline;
+  color: currentColor;
+  font-size: 3vw;
+  margin: 0 auto;
+  padding: 10px;
+  z-index: 3;
 }
 #project-iframe-icon {
-  max-height: inherit;
-  width: inherit;
-  height: inherit;
+  margin: 0 3vw 0 auto;
+  cursor: pointer;
+  color: currentColor;
+  max-height: 50px;
+
+  height: 100%;
+  width: max-content;
 }
 
 .project-background iframe {
@@ -97,6 +97,6 @@
     font-size: 25px;
   }
   .project-iframe-header button {
-    width: 50px;
+    font-size: 25px;
   }
 }

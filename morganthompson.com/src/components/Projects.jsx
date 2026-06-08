@@ -21,7 +21,7 @@ export default function Projects() {
         margin: "0 auto"
       }}>Projects</h2>
 
-      <ProjectCard link="https://morganthompson112.github.io/" title="Pine Tree Soaps" shorturl="pinetreesoaps.com">
+      <ProjectCard link="https://morganthompson112.github.io/pinetreesoaps.com/" title="Pine Tree Soaps" shorturl="morganthompson112.github.io/pinetreesoaps.com">
       
       </ProjectCard>
       <ProjectCard>
