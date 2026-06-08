@@ -1,0 +1,45 @@
+:root {
+  --player-width: 100vw;
+  --player-height: calc( var(--player-width) * 9 / 16 );
+  
+  --player-max-height: 60vh;
+  --player-max-width: calc( var(--player-max-height) *16/9 );
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+#yt-player {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: none;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+}
+
+.player-container {
+  width: var(--player-width);
+  height: var(--player-height); 
+  max-width: var(--player-max-width);
+  max-height: var(--player-max-height);
+  grid-column: 1 / span 2;
+}
+
+.notes {
+  width: 100%;
+  height: auto;
+  background-color: rgb(201, 255, 222);
+}
+.notes-list-container {
+  height: auto;
+  overflow: scroll;
+  list-style: none;
+}

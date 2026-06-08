@@ -1,0 +1,15 @@
+header {
+  background-color: #4a7fa7;
+  width: 100vw;
+  height: 75px;
+  text-align: center;
+  padding: 20px 0 10px;
+  margin: 0;
+  position:sticky;
+  top:0;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0 auto;
+}

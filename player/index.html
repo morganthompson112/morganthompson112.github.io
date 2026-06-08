@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="./player.css">
+  </head>
+  <body>
+
+    <div class="container">
+      
+      <div class="url">
+        <label for="url-input">URL</label>
+        <input type="text" name="url-input" id="url-input">
+      </div>
+      
+      <div class="player-container">
+        <div id="yt-placeholder"></div>
+        <div id="yt-player"></div>
+      </div>
+      
+      <div class="note-panel">
+        <h3>Note Panel</h3>
+        
+        <div class="note-panel">
+          <button id="note-prev"><<</button>
+          <button id="note-new">New</button>
+          <button id="note-next">>></button>
+        </div>
+      
+        <textarea name="note-text" id="note-text" cols="50" rows="8"></textarea>
+      
+        <div class="note-time">
+            <label for="note-time-start">Time</label>
+            <input type="text" id="note-time-input-1">
+        </div>
+      
+        <button id="note-post" disabled="true">Post Note</button>
+      </div>
+
+      <div class="notes">
+        <h3>Notes</h3>
+        <div class="notes-list-container">
+          <ul id="notes-list">
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      //load yt iframe api
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      //
+      //
+      //yt iframe api loaded
+      function onYouTubeIframeAPIReady() {
+        //get id
+        getVideoId();
+        //new player
+        newPlayer(videoId);
+      }
+
+
+      //load url input and add event listener
+      let urlInput = document.getElementById("url-input");
+      urlInput.addEventListener("input", () => {
+        //get video id
+        getVideoId();
+        //make sure new player is needed
+        if (videoId === null) {
+        } else if (videoId === videoIdOld) {
+        } else {
+          //remove player
+          removePlayer();
+          //new player with new ID
+          newPlayer(videoId);
+        }
+      });
+      //get video id
+      let videoId = "jOaDjhjI_bI", videoIdOld;
+      function getVideoId() {
+        //create url var
+        let url = urlInput.value;
+        //return if no url value
+        if (url == "") return;
+        //create keywords array
+        let start_keywords = ["?v=", "youtu.be/"];
+        let end_keywords = ["?", "&"];
+        //find starting pos
+        let start = -1;
+        for (let i of start_keywords) {
+          //index
+          let index = url.indexOf(i);
+          //test keyword
+          if (index != -1) {
+            start = index + i.length;
+            break;
+          }
+        }
+        if (start == -1) {
+          videoId = null;
+          return;
+        }
+        //find ending pos
+        let end = -1;
+        for (let i of end_keywords) {
+          //index
+          let index = url.indexOf(i, start);
+          //test keyword
+          if (index != -1) {
+            end = index;
+            break;
+          }
+        }
+        if (end === -1)
+          end = url.length;
+        //combine video id
+        videoIdOld = videoId;
+        videoId = url.substring(start, end);
+        return videoId;
+      }
+      
+
+      //remove player
+      function removePlayer() {
+        //remove old yt-player
+        try {
+          document.getElementById("yt-player").remove();
+        } catch {}
+        //create new yt-player
+        let playerDiv = document.createElement("div")
+        playerDiv.id = "yt-player";
+        //place new yt-player after url input
+        let placeholder = document.getElementById("yt-placeholder");
+        placeholder.after(playerDiv);
+      } 
+      //new player function
+      var player;
+      function newPlayer(id) {
+        player = new YT.Player('yt-player', {
+          height: '390',
+          width: '640',
+          videoId: id,
+          playerVars: {
+            'playsinline': 1
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      
+
+      //player ready
+      function onPlayerReady(event) {
+        if (videoId == videoIdOld)
+          player.seekTo(videoTime, true);
+      }
+      //player state change
+      let videoTime = 0;
+      function onPlayerStateChange(event) {
+        
+
+      }
+
+      //note class
+      class Note {
+        constructor(msg, time) {
+          this.msg = msg;
+          this.time = time;
+        }
+      }
+      //note array
+      let noteList = [];
+      let noteListSorted = [];
+
+      //import timer
+      let timer1 = document.getElementById('note-time-input-1');
+      //update timer
+      let updateTimerInterval = window.setInterval(() => {
+        //update video time
+        videoTime = Math.round(player.getCurrentTime() * 10) / 10;
+        //add zero if needed 
+        if (videoTime == Math.floor(videoTime)) {
+          videoTime += ".0";
+        }
+        //store timer in input
+        timer1.value = videoTime;
+      }, 100);
+
+      
+      //notes
+      //new note
+      let noteNewButton = document.getElementById('note-new');
+      noteNewButton.addEventListener('click', () => {
+        //pause player
+        player.pauseVideo();
+        //clear text box
+        noteTextOld = noteText.value;
+        noteText.value = "";
+      });
+      //note text
+      let noteText = document.getElementById('note-text');
+      let noteTextOld = "";
+      noteText.addEventListener('input', () => {
+        //enable post
+        if (noteText.value == "" || !(player.getPlayerState() >= 1 && player.getPlayerState() <= 3))
+          notePostButton.disabled = true;
+        else
+          notePostButton.disabled = false;
+      });
+      //post note
+      let notePostButton = document.getElementById('note-post');
+      notePostButton.addEventListener('click', () => {
+        //store msg and timer
+        let msg = noteText.value;
+        let time = timer1.value;
+        //make sure there are no identical notes
+        for (let i = 0; i < noteList.length; i++) {
+          if (noteList[i].msg == msg && noteList[i].time == time)
+            return;
+        }
+        //add new note object
+        noteList.push(new Note(msg, time));
+        //update display
+      });
+      //pull list
+      function pullList() {
+        //reset list
+        noteList = [];
+        //
+      }
+      //update display
+      function updateDisplay() {
+        //get list items
+        let listItems = document.querySelectorAll('li');
+        //remove list items
+        
+      }
+
+      
+
+      
+
+    </script>
+
+    <style>
+
+    </style>
+    
+  </body>
+</html>

@@ -1,0 +1,138 @@
+body {
+  background-color: #FFFDF3;
+  font-family: 'Markazi Text', serif;
+  padding-top: 0;
+  margin: 0;
+  overflow-x: hidden;
+  justify-content: center;
+}
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+  color: white;
+}
+h1 + p {
+  color: white;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  line-height: 2;
+}
+p {
+  font-size: 1.3rem;
+}
+.link-hover {
+  transition: .5s;
+}
+.link-hover:hover {
+  opacity: .7;
+}
+
+
+header {
+  background-color: #AEE8E8;
+  padding: 1rem 0;
+  margin: 0;
+}
+header > a {
+  display:block;
+  margin: 0 auto;
+  width: 60%;
+  max-width: 500px;
+}
+header img {
+  width: 100%;
+}
+
+
+nav {
+  background-color: #9FDBC8;
+  margin: 0;
+  height: 7rem;
+}
+nav ul {
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  height: inherit;
+  list-style: none;
+  margin: auto auto;
+  padding: 0;
+}
+nav li {
+  display: block;
+  font-size: 2.5rem;
+  width: 25%;
+  text-align: center;
+  margin: auto 0;
+}
+nav a {
+  text-decoration: none;
+  color: #495e57;
+  margin: 0 auto;
+}
+
+
+main {
+  margin: 3.5rem auto;
+  max-width: 1100px;
+  width: 90%;
+}
+section {
+  display: flex;
+  gap: 30px;
+}
+article {
+  flex: 1;
+}
+#columns article {
+  background-color: #ddf9f9;
+  border-radius: 15px;
+  margin-top: 50px;
+}
+#columns img {
+  width: 100%;
+}
+#banner {
+  height: auto;
+  background-image: url("./assets/header.jpg");
+  border-radius: 15px;
+}
+#banner article {
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.322);
+  border-radius: inherit;
+}
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  margin: 0 auto;
+  background-color: #9FDBC8;
+  height: 150px;
+}
+#footer-logo {
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+}
+footer img {
+  max-width: 100%;
+  max-height: 100%;
+  display:block;
+  margin: auto;
+}
+#footer-copyright {
+  width: 200px;
+  text-align: center;
+  margin: auto 0;
+}
+footer p {
+  font-size: 1.4rem;
+  color: #495e57;
+}

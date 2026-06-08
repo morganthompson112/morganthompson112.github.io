@@ -1,0 +1,21 @@
+
+ul {
+  display: inline-flex;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+}
+li {
+  padding: 10px;
+}
+nav ul a {
+  display: inline;
+  color: black;
+  text-decoration: none;
+  transition: .25s;
+}
+nav ul a:hover {
+  color: white;
+}
