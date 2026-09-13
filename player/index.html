@@ -2,7 +2,6 @@
 <html>
   <head>
     <base target="_top">
-    <link rel="stylesheet" href="./player.css">
   </head>
   <body>
 
@@ -32,6 +31,10 @@
         <div class="note-time">
             <label for="note-time-start">Time</label>
             <input type="text" id="note-time-input-1">
+
+            <button id="note-time-back"><<</button>
+            <input type="number" id="note-time-step" value="1" step="1" min="1">
+            <button id="note-time-forward">>></button>
         </div>
       
         <button id="note-post" disabled="true">Post Note</button>
@@ -45,9 +48,16 @@
         </div>
       </div>
 
+      <p id="test">
+
+      </p>
+
     </div>
 
     <script>
+      //add testing
+      let test = document.getElementById("test");
+
       //load yt iframe api
       var tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
@@ -159,6 +169,8 @@
       function onPlayerReady(event) {
         if (videoId == videoIdOld)
           player.seekTo(videoTime, true);
+        else
+          player.seekTo(0);
       }
       //player state change
       let videoTime = 0;
@@ -174,9 +186,6 @@
           this.time = time;
         }
       }
-      //note array
-      let noteList = [];
-      let noteListSorted = [];
 
       //import timer
       let timer1 = document.getElementById('note-time-input-1');
@@ -194,6 +203,11 @@
 
       
       //notes
+
+      //note array
+      let noteList = [];
+      let noteListSorted = [];
+
       //new note
       let noteNewButton = document.getElementById('note-new');
       noteNewButton.addEventListener('click', () => {
@@ -208,11 +222,36 @@
       let noteTextOld = "";
       noteText.addEventListener('input', () => {
         //enable post
-        if (noteText.value == "" || !(player.getPlayerState() >= 1 && player.getPlayerState() <= 3))
+        if (noteText.value == "" || player.getPlayerState() < 1 || player.getPlayerState() > 3)
           notePostButton.disabled = true;
         else
           notePostButton.disabled = false;
       });
+
+      //note time step
+      let noteStepTime;
+      let noteStepTimeInput = document.getElementById('note-time-step');
+      try {
+        noteStepTime = Number(window.localStorage.getItem("noteStepTime"));
+        noteStepTimeInput.value = noteStepTime;
+      } catch {
+        noteStepTime = 1;
+      }
+      noteStepTimeInput.addEventListener("input", () => {
+        noteStepTime = noteStepTimeInput.value;
+        window.localStorage.setItem("noteStepTime", "" + noteStepTime);
+      });
+      //note time back
+      let noteStepBack = document.getElementById('note-time-back');
+      noteStepBack.addEventListener('click', () => {
+        player.seekTo(player.getCurrentTime() - noteStepTime, true);
+      });
+      //note time forward
+      let noteStepForward = document.getElementById('note-time-forward');
+      noteStepForward.addEventListener('click', () => {
+        player.seekTo(player.getCurrentTime() + noteStepTime, true);
+      });
+
       //post note
       let notePostButton = document.getElementById('note-post');
       notePostButton.addEventListener('click', () => {
