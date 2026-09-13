@@ -7,9 +7,32 @@
 
     <div class="container">
       
-      <div class="url">
-        <label for="url-input">URL</label>
-        <input type="text" name="url-input" id="url-input">
+      <div class="project">
+        <h3>Project</h3>
+
+        <label for="project-name">
+          Name
+          <input type="text" name="project-name" id="project-name" list="project-name-list">
+        </label>
+        <datalist id="project-name-list"></datalist>
+
+        <label for="project-draft">
+          Draft
+          <input type="text" name="project-draft" id="project-draft" list="project-draft-list">
+        </label>
+        <datalist id="project-draft-list"></datalist>
+
+        <label for="project-user">
+          User
+          <input type="text" name="project-user" id="project-user">
+        </label>
+        
+        <label for="project-url">
+          URL
+          <input type="text" name="project-url" id="project-url">
+        </label>
+
+        <button id="project-submit">Submit</button>
       </div>
       
       <div class="player-container">
@@ -37,7 +60,7 @@
             <button id="note-time-forward">>></button>
         </div>
       
-        <button id="note-post" disabled="true">Post Note</button>
+        <button id="note-post" disabled>Post Note</button>
       </div>
 
       <div class="notes">
@@ -75,7 +98,7 @@
 
 
       //load url input and add event listener
-      let urlInput = document.getElementById("url-input");
+      let urlInput = document.getElementById("project-url");
       urlInput.addEventListener("input", () => {
         //get video id
         getVideoId();
@@ -181,9 +204,10 @@
 
       //note class
       class Note {
-        constructor(msg, time) {
+        constructor(msg, time, user) {
           this.msg = msg;
           this.time = time;
+          this.user = user;
         }
       }
 
@@ -238,7 +262,7 @@
         noteStepTime = 1;
       }
       noteStepTimeInput.addEventListener("input", () => {
-        noteStepTime = noteStepTimeInput.value;
+        noteStepTime = Number(noteStepTimeInput.value);
         window.localStorage.setItem("noteStepTime", "" + noteStepTime);
       });
       //note time back
@@ -250,6 +274,8 @@
       let noteStepForward = document.getElementById('note-time-forward');
       noteStepForward.addEventListener('click', () => {
         player.seekTo(player.getCurrentTime() + noteStepTime, true);
+        if (player.getPlayerState() == -1)
+          player.playVideo();
       });
 
       //post note
