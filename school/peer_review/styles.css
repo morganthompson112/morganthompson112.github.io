@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #1b1a19;
+  --color-accent: #c8a55a;
+  --color-accent-light: #efe6d2;
+  --color-bg: #f8f5ef;
+  --color-text: #2d2a27;
+  --font-heading: Georgia, serif;
+  --font-body: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.05em;
+}
+
+.container {
+  width: 100%;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.site-header {
+  padding: 1.5rem 0;
+  background: var(--color-primary);
+  border-bottom: 0.0625rem solid var(--color-accent);
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-image {
+  width: 10rem;
+  height: auto;
+  display: block;
+}
+
+.logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  letter-spacing: 0;
+  transition: letter-spacing 0.3s ease;
+}
+
+.site-header:hover .logo-text {
+  letter-spacing: 0.125rem;
+}
+
+.primary-navigation {
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.nav-item a {
+  color: var(--color-accent-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-item a:hover {
+  color: var(--color-accent);
+}
+
+.site-main {
+  padding-bottom: 3rem;
+}
+
+.hero {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  background: linear-gradient(rgba(27, 26, 25, 0.85), rgba(27, 26, 25, 0.85));
+}
+
+.hero-content {
+  width: 100%;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  margin: 0 0 1rem;
+  font-family: var(--font-heading);
+  color: #ffffff;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-subheading {
+  font-size: 1.125rem;
+  margin: 0 0 1.5rem;
+  color: #ffffff;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  color: #ffffff;
+  background: transparent;
+  border: 0.0625rem solid #ffffff;
+  text-decoration: none;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  padding: 2rem 1.5rem 0;
+}
+
+.feature-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+}
+
+.feature-card p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 0.0625rem solid var(--color-accent-light);
+  padding: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-0.375rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(27, 26, 25, 0.12);
+}
+
+.feature-card:hover img {
+  transform: scale(1.03);
+}
+
+.site-footer {
+  padding: 1.5rem 0;
+  background: var(--color-primary);
+  color: var(--color-accent-light);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo-small {
+  width: 4rem;
+  height: auto;
+  display: block;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-accent-light);
+  text-align: right;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 0.125rem solid var(--color-accent);
+  outline-offset: 0.1875rem;
+}
+
+@media (max-width: 48rem) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
