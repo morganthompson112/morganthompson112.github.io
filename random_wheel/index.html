@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Wheel</title>
+  
+</head>
+<body>
+
+  <div class="wheel">
+    <svg id="circleSvg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer circle -->
+      <circle cx="100" cy="100" r="95" class="circle-outline" />
+      <!-- Group where dividing lines will be injected -->
+      <g id="dividesGroup">
+        <line x1="100" y1="100" x2="100" y2="5" class="divide-line"></line>
+        <line x1="100" y1="100" x2="100" y2="195" class="divide-line"></line>
+      </g>
+    </svg>
+    
+    <ul id="wheel-list">
+      <li class="wheel-option">test</li>
+      <li class="wheel-option">test2</li>
+      <li class="wheel-option">test3</li>
+    </ul>
+
+  </div>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background-color: #f4f4f9;
+    }
+
+    .wheel {
+      width: 75vw;
+      height: 75vw;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+    }
+
+    #wheel-list {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      top: 50%;
+    }
+    .wheel-option {
+      position: absolute;
+      list-style: none;
+      height: 20px;
+      width: 50%;
+      padding: 0 25% 0 auto;
+    }
+
+    .circle-outline {
+      fill: #ffffff;
+      stroke: #333333;
+      stroke-width: 3;
+    }
+
+    .divide-line {
+      stroke: #333333;
+      stroke-width: 2;
+      border: 2px solid black;
+    }
+  </style>
+
+  <script>
+    const dividesGroup = document.getElementById('dividesGroup');
+
+    let divisions = document.getElementsByClassName("wheel-option").length;
+    const center = 100;
+    const radius = 95;
+
+    function drawDivisions() {
+      // Clear previous lines
+      dividesGroup.innerHTML = '';
+
+      // A single piece needs no dividing lines
+      if (divisions <= 1) return;
+
+      const angleStep = (2 * Math.PI) / divisions;
+
+      for (let i = 0; i < divisions; i++) {
+        // Subtract Math.PI / 2 so the first line starts straight up (12 o'clock)
+        const angle = i * angleStep - Math.PI / 2;
+        
+        // Calculate outer endpoint on the circle's circumference
+        const x2 = center + radius * Math.cos(angle);
+        const y2 = center + radius * Math.sin(angle);
+
+        const line = document.createElementNS("http://www.w3.org/2000/svg", 'line');
+        line.setAttribute('x1', center);
+        line.setAttribute('y1', center);
+        line.setAttribute('x2', x2);
+        line.setAttribute('y2', y2);
+        line.classList.add('divide-line');
+
+        dividesGroup.appendChild(line);
+      }
+    }
+
+    // Initial render
+    drawDivisions();
+  </script>
