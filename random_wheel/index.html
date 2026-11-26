@@ -20,9 +20,9 @@
     </svg>
     
     <ul id="wheel-list">
-      <li class="wheel-option">test</li>
-      <li class="wheel-option">test2</li>
-      <li class="wheel-option">test3</li>
+      <li class="wheel-option"><span>test</span></li>
+      <li class="wheel-option"><span>test2</span></li>
+      <li class="wheel-option"><span>test3</span></li>
     </ul>
 
   </div>
@@ -41,31 +41,40 @@
 
     .wheel {
       width: 75vw;
+      max-width: 90vh;
       height: 75vw;
+      max-height: 90vh;
     }
 
     svg {
-      width: 100%;
-      height: 100%;
+      width: inherit;
+      max-width: inherit;
+      height: inherit;
+      max-height: inherit;
       position: absolute;
-      right: 0;
+      right: auto;
+      left: auto;
+      z-index: 2;
     }
 
     #wheel-list {
-      position: absolute;
-      height: 100%;
       width: 100%;
-      padding: 0;
+      height: 0;
       margin: 0;
+      padding-top: 11%;
+      z-index: 1;
 
       top: 50%;
     }
     .wheel-option {
-      position: absolute;
       list-style: none;
-      height: 20px;
+      height: 0;
+      width: 100%;
+      margin: auto 0;
+    }
+    .wheel-option span {
       width: 50%;
-      padding: 0 25% 0 auto;
+      padding-left: 8%;
     }
 
     .circle-outline {
